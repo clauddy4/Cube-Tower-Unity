@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ public class GameController : MonoBehaviour {
     public GameObject[] canvasStartPage;
 
     private Rigidbody allCubesRb;
-    private Boolean IsLose, FirstCube;
+    private Boolean IsLose, firstCube;
 
     public Color[] bgColors;
     private Color toCameraColor;
@@ -51,8 +52,11 @@ public class GameController : MonoBehaviour {
                 return;
 #endif
 
-            if(!FirstCube) {
-                FirstCube = true;
+            if (EventSystem.current.IsPointerOverGameObject()) 
+                return;
+
+            if(!firstCube) {
+                firstCube = true;
                 foreach (GameObject obj in canvasStartPage) 
                     Destroy(obj);
             }
@@ -65,6 +69,9 @@ public class GameController : MonoBehaviour {
             newCube.transform.SetParent(allCubes.transform);
             nowCube.setVector(cubeToPlace.position);
             allCubesPositions.Add(nowCube.getVector());
+
+            if (PlayerPrefs.GetString("music") != "No")
+                GetComponent<AudioSource>().Play();
 
             allCubesRb.isKinematic = true;
             allCubesRb.isKinematic = false;
