@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 106460287}
   - component: {fileID: 106460290}
   - component: {fileID: 106460289}
-  - component: {fileID: 106460288}
   m_Layer: 5
   m_Name: Best Score
   m_TagString: Untagged
@@ -161,25 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -331, y: -70}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &106460288
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106460286}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f4a002c91797c2458907281956c9cb3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &106460289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +182,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1aca9a970c5dca541a2ddf82398a541a, type: 3}
-    m_FontSize: 70
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -212,8 +192,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.75
-  m_Text: '<size=30>Best score: </size><color="#fb4c1f">0</color>'
+    m_LineSpacing: 0.7
+  m_Text: '<size=35>Best: </size><color="#fb4c1f">0</color>
+
+    <size=30>Now: </size><color="#fb4c1f">0</color>'
 --- !u!222 &106460290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1487,6 +1469,7 @@ GameObject:
   - component: {fileID: 1192274340}
   - component: {fileID: 1192274339}
   - component: {fileID: 1192274338}
+  - component: {fileID: 1192274341}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1556,7 +1539,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192274339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192274341}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: LoadShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1192274339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1590,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192274336}
   m_CullTransparentMesh: 1
+--- !u!114 &1192274341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192274336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021300e89304c7a4a8abe815a462ba5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicOn: {fileID: 0}
+  musicOff: {fileID: 0}
 --- !u!1 &1259879830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubeChangePlaceSpeed: 0.5
   cubeToPlace: {fileID: 1259879831}
+  scoreTxt: {fileID: 106460289}
   cubeToCreate: {fileID: 447244820}
   allCubes: {fileID: 240167971}
   canvasStartPage:

@@ -15,6 +15,14 @@ public class CanvasButtons : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadShop() {
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void CloseShop() {
+        SceneManager.LoadScene("Main");
+    }
+
     public void PlayMusic() {
         if (PlayerPrefs.GetString("music") == "No") {
             PlayerPrefs.SetString("music", "Yes");
