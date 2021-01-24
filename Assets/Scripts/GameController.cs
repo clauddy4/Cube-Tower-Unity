@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour {
     private Rigidbody allCubesRb;
     private Boolean IsLose, FirstCube;
 
+    public Color[] bgColors;
+    private Color toCameraColor;
+
     private List<Vector3> allCubesPositions = new List<Vector3> {
         new Vector3(0, 0, 0),
         new Vector3(1, 0, 0),
@@ -33,6 +36,7 @@ public class GameController : MonoBehaviour {
     private Coroutine showCubePlace;
 
     private void Start() {
+        toCameraColor = Camera.main.backgroundColor;
         mainCam = Camera.main.transform;
         camMoveToYPosition = 6f + nowCube.y - 1f;
 
@@ -78,6 +82,9 @@ public class GameController : MonoBehaviour {
         mainCam.localPosition = Vector3.MoveTowards(mainCam.localPosition,
             new Vector3(mainCam.localPosition.x, camMoveToYPosition, mainCam.localPosition.z),
             camMoveSpeed * Time.deltaTime);
+
+        if (Camera.main.backgroundColor != toCameraColor)
+            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, toCameraColor, Time.deltaTime / 1.5f);
     }
 
     IEnumerator ShowCubePlace() {
@@ -146,6 +153,14 @@ public class GameController : MonoBehaviour {
             mainCam.localPosition -= new Vector3(0, 0, 2f);
             prevCounMaxHorizontal = maxHor;
         }
+        if (maxY >= 21) toCameraColor = bgColors[7];
+        else if (maxY >= 18) toCameraColor = bgColors[6];
+        else if (maxY >= 15) toCameraColor = bgColors[5];
+        else if (maxY >= 13) toCameraColor = bgColors[4];
+        else if (maxY >= 10) toCameraColor = bgColors[3];
+        else if (maxY >= 7) toCameraColor = bgColors[2];
+        else if (maxY >= 4) toCameraColor = bgColors[1];
+        else if (maxY >= 2) toCameraColor = bgColors[0];
     }
 }
 
