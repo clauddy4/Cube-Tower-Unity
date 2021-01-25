@@ -503,11 +503,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &447244820 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3337226390471484651, guid: 77563cc6fec2b0a4eadad799a519c0a6, type: 3}
-  m_PrefabInstance: {fileID: 3337226390850555647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &447244821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3337226390471484650, guid: 77563cc6fec2b0a4eadad799a519c0a6, type: 3}
@@ -1764,8 +1759,20 @@ MonoBehaviour:
   cubeChangePlaceSpeed: 0.5
   cubeToPlace: {fileID: 1259879831}
   scoreTxt: {fileID: 106460289}
-  cubeToCreate: {fileID: 447244820}
   allCubes: {fileID: 240167971}
+  cubesToCreate:
+  - {fileID: 3337226390471484651, guid: 77563cc6fec2b0a4eadad799a519c0a6, type: 3}
+  - {fileID: 988189908818397162, guid: 9334cea6ea25b5548a775fbe0194bc1a, type: 3}
+  - {fileID: 382820878225940150, guid: fe76c9ba96b463448960888ef203fb98, type: 3}
+  - {fileID: 2857407295294028607, guid: 64731c999bf274b4982e0528688fd4eb, type: 3}
+  - {fileID: 7944386298304882182, guid: 4890c9840b161344b9c62b07114c416f, type: 3}
+  - {fileID: 2163719981748931746, guid: cea5c5fa9d17da448ba8e0935be856a3, type: 3}
+  - {fileID: 1859781456273486561, guid: d2f133cad423b8d4e863fdf5198d1880, type: 3}
+  - {fileID: 344634636154553927, guid: 086410d12ea848d4d9e54b77930ed0bc, type: 3}
+  - {fileID: 5741290117120563159, guid: 440b7216149b04f4981ac93112ecd149, type: 3}
+  - {fileID: 3880449484570990905, guid: 06d8b8705716a7141bcf02730a1d2fb6, type: 3}
+  - {fileID: 1416908973368178329, guid: 884f764e95303704b8f13c6ef32a8cb8, type: 3}
+  - {fileID: 4770269157722673488, guid: b7742d67bff4bc44784079b0e508e184, type: 3}
   canvasStartPage:
   - {fileID: 0}
   - {fileID: 566445175}
